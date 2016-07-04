@@ -18,7 +18,7 @@ else {
 		if($num_users == 1) {
 			$row = $result->fetch_assoc();
 			$_SESSION['ID_user'] = $row['idWykladowcy'];
-			header('Location: ../partials/mainPanel.php');
+			header('Location: ../mainPanel.php');
 			
 		}
 		else {
