@@ -1,0 +1,33 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Strona dla wykładowcy</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body><div class="container">
+<br>
+      <form name='loginForm' action='../php/logIn.php' method='post' id='login'>
+        <h2 class="form-signin-heading">Proszę się zalogować</h2>
+        <label  for="inputEmail" class="sr-only">Email </label>
+        <input name='email' type="email" id="inputEmail" class="form-control" placeholder="email" required="" autofocus="">
+        <label for="inputPassword" class="sr-only">Haslo</label>
+        <input name='password' type="password" id="inputPassword" class="form-control" placeholder="haslo" required="">
+        <div class="checkbox">
+		<div id="box2" style='visibility: hidden;'> Podano błędne dane</div>
+          <label>
+            <a href='#'> Przypomnij hasło
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Zaloguj</button>
+      </form>
+
+    </div>
+	</form>
+	</div></div></div>
+  </body>
