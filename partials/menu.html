@@ -7,7 +7,7 @@
 					<a href="#">grupa: {{group}}</a>	
 					<div ng-repeat="subjects in subjectsTable">		
 						<div ng-repeat="subject in subjects" class="wrap btn btn-default btn-block" >
-							<a href="#">{{subject}}</a>
+							<a href="#/groups/{{fieldOfStudy}}/{{group}}/{{subject}}" ng-click="menu.write">{{subject}}</a>
 						</div>
 					</div>
 				</div>
