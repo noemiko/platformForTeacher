@@ -1,4 +1,4 @@
-angular.module('myApp', ['Menu','ngRoute'])
+angular.module('myApp', ['Menu','ngRoute','Tabs'])
 	.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -7,8 +7,8 @@ angular.module('myApp', ['Menu','ngRoute'])
       })
       .when('/groups/:fieldOfStudy/:group/:subject', {
         templateUrl: 'partials/contentGroups.html',
-       controller:'menuController',
-       controllerAs:'menu'
+       controller:'tabController',
+       controllerAs:'tab'
       })
       .otherwise({
         redirectTo: '/'
@@ -20,3 +20,4 @@ angular.module('myApp', ['Menu','ngRoute'])
 
 
 angular.module('Menu', []);
+angular.module('Tabs', []);

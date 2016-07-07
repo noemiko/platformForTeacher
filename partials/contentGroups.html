@@ -1,10 +1,21 @@
 <ul class="nav nav-tabs" id="AllTopTab">
-						  <li class="topTab active" data-id="Pytania"><a  data-toggle="tab">Zadawanie Pytań</a></li>
-						  <li class="topTab" data-id="Historia"><a  data-toggle="tab">Punkty studentów</a></li>
-						  <li class="topTab" data-id="Plik"><a  data-toggle="tab">Wysłanie pliku</a></li>
-						  <li class="topTab" data-id="OdpowiedziOtwarte"><a  data-toggle="tab">Sprawdzanie pytań otwartych</a></li>
-						</ul>
-						<div id="content_all">
-							  <h1 id="content-header"></h1>
-							  <p id="content">{{menu.structureToCheck}}</p>
-						</div>
+	<li ng-class="{ active:tab.isSet(1) }" ng-click="tab.setTab(1)" class="topTab active" data-id="Pytania"><a  data-toggle="tab">Zadawanie Pytań</a></li>
+	<li ng-class="{ active:tab.isSet(2) }" ng-click="tab.setTab(2)" class="topTab" data-id="Historia"><a  data-toggle="tab">Punkty studentów</a></li>
+	<li ng-class="{ active:tab.isSet(3) }" ng-click="tab.setTab(3)" class="topTab" data-id="Plik"><a  data-toggle="tab">Wysłanie pliku</a></li>
+	<li ng-class="{ active:tab.isSet(4) }" ng-click="tab.setTab(4)" class="topTab" data-id="OdpowiedziOtwarte"><a  data-toggle="tab">Ocenianie</a>
+</li>
+</ul>
+	<div id="content_all">
+			<div id="Questions" ng-show="tab.isSet(1)">
+							Pytania {{tab.actualFieldOfStudy}}
+			</div>
+			<div id="StudentsPoints" ng-show="tab.isSet(2)">
+							Punkty
+			</div>
+			<div id="FileSend" ng-show="tab.isSet(3)">
+							FileSend
+			</div>
+			<div id="Rate" ng-show="tab.isSet(4)">
+							Oceniamy
+			</div>
+	</div>

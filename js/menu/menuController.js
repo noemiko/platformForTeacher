@@ -1,19 +1,20 @@
 angular.module('Menu')
-.controller('menuController', ['$scope','$http','$routeParams', 'groupList', 'structureMenu' ,
-function ($scope,$http, $routeParams, groupList, structureMenu) {
+.controller('menuController', ['$scope','$http','groupList', 'structureMenu' ,
+function ($scope,$http, groupList, structureMenu) {
 	var menu=this;
+	var init = function () 
+	{
+		createStructureData();
+	};
+	init();
+	
 
-  groupList.getData().then(function(d){
-    menu.structure=structureMenu.setStructure(d);
-  });
-     
-
-
-  		
-
-
-
- 
-
+	function createStructureData()
+	{
+	  groupList.getData().then(function(data)
+	  {
+	    menu.structure = structureMenu.setStructure(data);
+	  });
+	 };
 
 }]);
