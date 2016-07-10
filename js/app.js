@@ -5,7 +5,7 @@ angular.module('myApp', ['Menu','ngRoute','Tabs'])
         templateUrl: 'partials/start.html',
      
       })
-      .when('/groups/:fieldOfStudy/:group/:subject', {
+      .when('/groups/:fieldOfStudy/:group/:subject/:id', {
         templateUrl: 'partials/contentGroups.html',
        controller:'tabController',
        controllerAs:'tab'

@@ -1,0 +1,75 @@
+		<form class="form-horizontal" ng-controller="questionController as q" ng-submit="q.send(form)">
+				<div class="form-group">
+					<label style="text-align: left;" for="title" class="col-lg-2 control-label ">Tytuł</label>
+					<div class="col-lg-10">
+						<input class="form-control" id="titleOfQuestion" placeholder="Tytuł" type="text" ng-model="form.title" >
+					</div>
+					</div>
+					<div class="form-group">
+					 <label style="text-align: left;" for="question" class="col-lg-2 control-label">Treść:</label>
+					 <div class="col-lg-10">
+						<textarea class="form-control" rows="5"  id="question" placeholder="Treść" ng-model="form.question"></textarea>
+					</div>
+					</div>
+					<div class="form-group ">
+						  <div class="col-md-4"> 
+						  <label class="col-md-4 control-label btn-block" for="radios">Wybierz rodzaj pytania</label>
+							<label class="radio-inline" for="radios-0">
+							  <input type="radio" name="typeOfQuestion" id="radios-1" value="1" checked="checked" ng-model="form.type">
+							  Otwarte
+							</label> 
+							<label class="radio-inline" for="radios-1">
+							  <input type="radio" name="typeOfQuestion" id="radios-0" value="0" ng-model="form.type">
+							 Zamknięte
+							</label> 
+						  </div>
+					</div>	
+						<div id='closeAnswers' class="form-group" ng-show="form.type==0">
+							<label style="text-align: left;" class="col-md-4 control-label btn-block" >Wybierz poprawną odpowiedź:            
+						
+								<div class="col-lg-10 has-success has-feedback">
+									  <input type="text" class="form-control" placeholder="poprawna odpowiedz" id="rightAnswer" ng-model="form.rightAnswer" >
+								</div>
+								
+								<div class="col-lg-10">
+									<input id='B' class="form-control" id="answerB" placeholder="odpowiedź" type="text" ng-model="form.B" >
+								</div>
+								<div class="col-lg-10">
+									<input id='C' class="form-control" id="answerC" placeholder="odpowiedź" type="text" ng-model="form.C">
+								</div>
+								<div class="col-lg-10">
+									<input id='D' class="form-control" id="answerD" placeholder="odpowiedź" type="text" ng-model="form.D" >
+								</div>
+						</label>
+						</div>
+					<div class="form-group">
+						  <label for="numberOfPoints">Wybierz liczbę punktów:</label>
+						  <select class="form-control" id="numberOfPoints" ng-model="form.numberOfPoints">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						  </select>	 
+						  
+						  <label for="timeForSharing">Zajęcia na których ma być udostępnione pytanie</label>
+						  <select  class="form-control" id="timeForSharing" ng-model="form.sharingTime">
+							<option>Teraz</option>
+							
+						  </select>
+						  <label for="howLongForAnswer">Czas na odpowiedź od udostępnienia (w minutach)</label>
+						  <select class="form-control" id="howLongForAnswer" ng-model="form.timeForAnswer">
+							<option>5</option>
+							<option>10</option>
+							<option>15</option>
+							<option>30</option>
+							<option>60</option>
+							<option>120</option>
+						  </select>
+					</div>
+						<button id="clear" type="reset" class="btn btn-default">Resetuj</button>
+						<button type='submit' id="sendQuestion" class="btn btn-primary">Wyślij</button>
+					</div>
+				</div>
+				
+			</form>

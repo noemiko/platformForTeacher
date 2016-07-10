@@ -1,6 +1,6 @@
 angular.module('Menu')
-.controller('menuController', ['$scope','$http','groupList', 'structureMenu' ,
-function ($scope,$http, groupList, structureMenu) {
+.controller('menuController', ['$http','groupList', 'structureMenu' ,
+function ($http, groupList, structureMenu) {
 	var menu=this;
 	var init = function () 
 	{
@@ -13,7 +13,9 @@ function ($scope,$http, groupList, structureMenu) {
 	{
 	  groupList.getData().then(function(data)
 	  {
+
 	    menu.structure = structureMenu.setStructure(data);
+	    console.log(menu.structure);
 	  });
 	 };
 
