@@ -16,11 +16,19 @@ if(!isset($_SESSION['ID_user'])) {
 	<script src="https://code.angularjs.org/1.5.1/angular-route.min.js"></script>
 	<script src="js/app.js"></script>
 	<script src="js/menu/services.js"></script>
+	<script src="js/tabs/TabController.js"></script>
+	<script src="js/questions/questionController.js"></script>
+	<script src="js/questions/services.js"></script>
+	<script src="js/questions/directives.js"></script>
+	<script src="js/studentsPoints/studentsPointsController.js"></script>
+	<script src="js/studentsPoints/directives.js"></script>
+	<script src="js/studentsPoints/services.js"></script>
 
 	<script src="js/menu/menuController.js"></script>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/dashboard.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
   </head>
   <body ng-app="myApp">
