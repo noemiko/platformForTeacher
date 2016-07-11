@@ -7,10 +7,10 @@
 </ul>
 	<div id="content_all">
 			<div id="Questions" ng-show="tab.isSet(1)">
-				<div ng-include="'partials/addQuestion.html'">
-
-				</div>
+				<question-add-form></question-add-form>
+			</div>
 			<div id="StudentsPoints" ng-show="tab.isSet(2)">
+			Punkty
 			</div>
 			<div id="FileSend" ng-show="tab.isSet(3)">
 							FileSend
