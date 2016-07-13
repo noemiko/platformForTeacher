@@ -15,7 +15,6 @@ angular.module('myApp')
           .success(function(data)
            {
             alert('Wysłano dane');
-            console.log(data);
            })
     		 .error(function(data, status, headers, config)
     		 	{
