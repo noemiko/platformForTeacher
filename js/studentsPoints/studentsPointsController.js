@@ -1,16 +1,25 @@
 angular.module('Tabs')
-.controller('studentsPointsController',[ 'pointsList', function(pointsList) {
-  this.sortType     = 'LP'; // set the default sort type
-  this.sortReverse  = false;  // set the default sort order
-  this.searchFish   = '';     // set the default search/filter term
+.controller('studentsPointsController',[ 'pointsList', 'structureStudents', function(pointsList, structureStudents) {
+  var students=this;
 
+  students.sortType     = ''; // set the default sort type
+  students.sortReverse  = false;  // set the default sort order
+  students.search   = '';     // set the default search/filter term
 
-  pointsList.getData().then(function(data)
-    {
-      this.students=data['data'];
-      var jsonData=JSON.stringify(data);
-      console.log(data['data']);
-    });
+  	
+  	var init = function () 
+	{
+		setStudentsPoints();
+	};
+	init();
 
-  
+  function setStudentsPoints()
+  {
+	  pointsList.getData().then(function(data)
+	    {
+	      	students.structure=structureStudents.set(data);
+	      	
+	    });
+	};
+
 }]);

@@ -1,4 +1,5 @@
-<div class="container" ng-controller="studentsPointsController as points">
+<div class="container" ng-app="sortApp" ng-controller="studentsPointsController as points">
+  
   <form>
     <div class="form-group">
       <div class="input-group">
@@ -13,29 +14,29 @@
     <thead>
       <tr>
       <td>
-          <a ng-click="points.sortType = 'lp'; points.sortReverse = !points.sortReverse">
-            numer
-            <span ng-show="points.sortType == 'lp' && !points.sortReverse" class="fa fa-caret-down"></span>
-            <span ng-show="points.sortType == 'lp' && points.sortReverse" class="fa fa-caret-up"></span>
+          <a  ng-click="points.sortType = 'id'; points.sortReverse = !points.sortReverse">
+            LP
+            <span ng-show="points.sortType == 'id' && !points.sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="points.sortType == 'id' && points.sortReverse" class="fa fa-caret-up"></span>
           </a>
         </td>
         <td>
           <a ng-click="points.sortType = 'name'; points.sortReverse = !points.sortReverse">
-            imię
+            Imię 
             <span ng-show="points.sortType == 'name' && !points.sortReverse" class="fa fa-caret-down"></span>
             <span ng-show="points.sortType == 'name' && points.sortReverse" class="fa fa-caret-up"></span>
           </a>
         </td>
         <td>
           <a ng-click="points.sortType = 'surname'; points.sortReverse = !points.sortReverse">
-          nazwisko
+          Nazwisko
             <span ng-show="points.sortType == 'surname' && !points.sortReverse" class="fa fa-caret-down"></span>
             <span ng-show="points.sortType == 'surname' && points.sortReverse" class="fa fa-caret-up"></span>
           </a>
         </td>
         <td>
           <a ng-click="points.sortType = 'points'; points.sortReverse = !points.sortReverse">
-          Liczba punktów
+          Punkty
             <span ng-show="points.sortType == 'points' && !points.sortReverse" class="fa fa-caret-down"></span>
             <span ng-show="points.sortType == 'points' && points.sortReverse" class="fa fa-caret-up"></span>
           </a>
@@ -44,12 +45,11 @@
     </thead>
     
     <tbody>
-      <tr ng-repeat="student in points.students | orderBy:points.sortType:points.sortReverse | filter:points.searchFish">
-      <div ng-repeat="s in student">
-        <td>{{ student[0] }}</td>
-        <td>{{ student[1] }}</td>
-        <td>{{ student[2] }}</td>
-        </div>
+      <tr ng-repeat="roll in points.structure | orderBy:points.sortType:points.sortReverse | filter:points.search">
+        <td>{{ roll.id }}</td>
+        <td>{{ roll.name }}</td>
+        <td>{{ roll.surname }}</td>
+        <td>{{ roll.points }}</td>
       </tr>
     </tbody>
     
