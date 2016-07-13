@@ -1,17 +1,18 @@
 <div ng-controller="menuController as menu" >
-
 	<div ng-repeat="(fieldOfStudy , groupsTable) in menu.structure">
-			<li class="btn btn-primary btn-block btn-lg wrap" ng-click="show =!show">{{fieldOfStudy}}
-			<div ng-repeat="(group , subjectsTable) in groupsTable">
-				<div class="btn btn-default btn-block wrap"  ng-show="show">
+		<li class="btn btn-primary btn-block btn-lg wrap" ng-click="show =!show">{{fieldOfStudy}}
+		<div ng-repeat="(group , subjectsTable) in groupsTable">
+			<div class="btn btn-default btn-block wrap"  ng-show="show">
 					<a href="#">grupa: {{group}}</a>	
 					<div ng-repeat="subjects in subjectsTable">		
-						<div ng-repeat="subject in subjects" class="wrap btn btn-default btn-block" >
-							<a href="#/groups/{{fieldOfStudy}}/{{group}}/{{subject}}" ng-click="menu.write">{{subject}}</a>
+						<div ng-repeat="subject in subjects" >
+							<div class="wrap btn btn-default btn-block" >
+								<a href="#/groups/{{fieldOfStudy}}/{{group}}/{{subject[0]}}/{{subject[1]}}" >{{subject[0]}}</a>
+							</div>
 						</div>
 					</div>
 				</div>
-				</div>
-			</li>
+			</div>
+		</li>
 	</div>				
 </div> 

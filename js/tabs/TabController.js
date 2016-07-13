@@ -13,4 +13,6 @@
     this.setTab = function(setTab) {
       this.tab = setTab;
     };
+
+
   }]);

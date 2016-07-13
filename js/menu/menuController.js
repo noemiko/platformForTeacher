@@ -15,7 +15,6 @@ function ($http, groupList, structureMenu) {
 	  {
 
 	    menu.structure = structureMenu.setStructure(data);
-	    console.log(menu.structure);
 	  });
 	 };
 
