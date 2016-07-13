@@ -12,8 +12,9 @@
 			<div id="StudentsPoints" ng-show="tab.isSet(2)">
 				<table-with-points></table-with-points>
 			</div>
-			<div id="FileSend" ng-show="tab.isSet(3)">
-							FileSend
+			<div id="FileSend" ng-show="tab.isSet(3)" ng-controller="dropController">
+			<ng-dropzone class="dropzone" options="dzOptions" callbacks="dzCallbacks" methods="dzMethods"></ng-dropzone>
+
 			</div>
 			<div id="Rate" ng-show="tab.isSet(4)">
 							Oceniamy

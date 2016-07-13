@@ -1,4 +1,4 @@
-angular.module('myApp', ['Menu','ngRoute','Tabs'])
+angular.module('myApp', ['Menu','ngRoute','Tabs','thatisuday.dropzone'])
 	.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -14,6 +14,7 @@ angular.module('myApp', ['Menu','ngRoute','Tabs'])
         redirectTo: '/'
       });
 
+      
   
   });
 

@@ -23,12 +23,20 @@ if(!isset($_SESSION['ID_user'])) {
 	<script src="js/studentsPoints/studentsPointsController.js"></script>
 	<script src="js/studentsPoints/directives.js"></script>
 	<script src="js/studentsPoints/services.js"></script>
+	<script src="js/sendFile/sendFile.js"></script>
+
 
 	<script src="js/menu/menuController.js"></script>
+
+<script src="sources/dropzone.min.js"></script>
+<script src="sources/ng-dropzone.min.js"></script>
+
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/dashboard.css" rel="stylesheet">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="sources/dropzone.min.css">
 
   </head>
   <body ng-app="myApp">
