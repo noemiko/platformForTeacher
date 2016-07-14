@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['ID_user'])) {
-	header('Location: ../index.php');
+	header('Location: index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -24,12 +24,18 @@ if(!isset($_SESSION['ID_user'])) {
 	<script src="js/studentsPoints/directives.js"></script>
 	<script src="js/studentsPoints/services.js"></script>
 	<script src="js/sendFile/sendFile.js"></script>
-
+	<script src="js/sendFile/services.js"></script>
+	<script src="js/rate/directives.js"></script>
+	<script src="js/rate/services.js"></script>
+	<script src="js/rate/StudentsRate.js"></script>
+	<script src="js/rate/filter.js"></script>
 
 	<script src="js/menu/menuController.js"></script>
 
 <script src="sources/dropzone.min.js"></script>
-<script src="sources/ng-dropzone.min.js"></script>
+<script src="sources/ng-rateit.min.js"></script>
+<script src="sources/dropzone.min.js"></script>
+<script src="js/sendFile/ng-dropzone.min.js"></script>
 
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -37,6 +43,7 @@ if(!isset($_SESSION['ID_user'])) {
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="sources/dropzone.min.css">
+    <link rel="stylesheet" href="sources/ng-rateit.css">
 
   </head>
   <body ng-app="myApp">

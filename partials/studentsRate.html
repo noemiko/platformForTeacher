@@ -1,0 +1,21 @@
+<div ng-repeat="(question, answerArray) in rate.structure">
+	<div class=" btn btn-primary btn-block">{{question}}				
+
+				<div style="display: none; float: right;" class=" btn-danger"> 	
+					<div style=" display: inline;" >Do oceny pozostało 2</div>
+				</div>	
+		<div ng-repeat="q in answerArray">
+				<div  style="text-align: left; display: block;" class="btn btn-default btn-block">						
+				<div style="font-weight: bold;">{{q.idAnswer}}{{q.name}} {{q.surname}}</div> 						
+					<div display:="" inline;="">
+				<div style=" display: inline;font-weight: bold;">Odpowiedź: 
+				</div>{{q.answer}}</div>		
+							
+				<div class="btn-default"></div>					
+					<div style="display: inline; border-style: outset;" ng-init="test.rateit=q.points">
+					Student otrzymał {{test.rateit}} punkty. Zmień ocenę na </div>			
+					 <ng-rate-it style="display: inline;" max ="q.pointsToGet" class="bigstar" step = 1 ng-model="test.rateit"></ng-rate-it>
+				</div> 
+		</div>
+	</div>
+</div>

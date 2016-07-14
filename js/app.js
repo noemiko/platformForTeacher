@@ -1,4 +1,4 @@
-angular.module('myApp', ['Menu','ngRoute','Tabs','thatisuday.dropzone'])
+angular.module('myApp', ['Menu','ngRoute','Tabs','thatisuday.dropzone','ngRateIt'])
 	.config(function ($routeProvider) {
     $routeProvider
       .when('/', {

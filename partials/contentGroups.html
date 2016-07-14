@@ -1,3 +1,5 @@
+
+
 <ul class="nav nav-tabs" id="AllTopTab">
 	<li ng-class="{ active:tab.isSet(1) }" ng-click="tab.setTab(1)" class="topTab active"><a >Zadawanie Pytań</a></li>
 	<li ng-class="{ active:tab.isSet(2) }" ng-click="tab.setTab(2)" class="topTab" ><a> Punkty studentów</a></li>
@@ -7,16 +9,21 @@
 </ul>
 	<div id="content_all">
 			<div id="Questions" ng-show="tab.isSet(1)">
+
 				<question-add-form></question-add-form>
+
 			</div>
 			<div id="StudentsPoints" ng-show="tab.isSet(2)">
+
 				<table-with-points></table-with-points>
+
 			</div>
 			<div id="FileSend" ng-show="tab.isSet(3)" ng-controller="dropController as drop">
+
 			<ng-dropzone class="dropzone" options="drop.dzOptions" callbacks="drop.dzCallbacks" methods="drop.dzMethods"></ng-dropzone>
 
 			</div>
 			<div id="Rate" ng-show="tab.isSet(4)">
-							Oceniamy
+							<rate-students></rate-students>
 			</div>
 	</div>
