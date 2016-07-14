@@ -1,5 +1,5 @@
 <div ng-repeat="(question, answerArray) in rate.structure">
-	<div class=" btn btn-primary btn-block">{{question}}				
+	<div class=" btn btn-primary btn-block" ng-click="show =!show">{{question}}				
 
 				<div style="display: none; float: right;" class=" btn-danger"> 	
 					<div style=" display: inline;" >Do oceny pozostało 2</div>
@@ -12,9 +12,9 @@
 				</div>{{q.answer}}</div>		
 							
 				<div class="btn-default"></div>					
-					<div style="display: inline; border-style: outset;" ng-init="test.rateit=q.points">
-					Student otrzymał {{test.rateit}} punkty. Zmień ocenę na </div>			
-					 <ng-rate-it style="display: inline;" max ="q.pointsToGet" class="bigstar" step = 1 ng-model="test.rateit"></ng-rate-it>
+					<div style="display: inline; border-style: outset;" ng-init="rateValue=q.points">
+					Student otrzymał {{rateValue}} punkty. Zmień ocenę na </div>			
+					 <ng-rate-it style="display: inline;" ng-click="rate.update(rateValue, q.idAnswer)" min=0 resetable=true max ="q.pointsToGet" step = 1 ng-model="rateValue"></ng-rate-it>
 				</div> 
 		</div>
 	</div>

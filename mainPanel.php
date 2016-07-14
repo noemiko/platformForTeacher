@@ -35,6 +35,7 @@ if(!isset($_SESSION['ID_user'])) {
 <script src="sources/dropzone.min.js"></script>
 <script src="sources/ng-rateit.min.js"></script>
 <script src="sources/dropzone.min.js"></script>
+
 <script src="js/sendFile/ng-dropzone.min.js"></script>
 
 

@@ -1,21 +1,17 @@
 angular.module('Tabs')
-.controller('studentsRate',[ 'openQuestion','structureOpenQuestion', function(openQuestion,structureOpenQuestion) {
+.controller('studentsRate',[ 'openQuestion','structureOpenQuestion', 'rate', function(openQuestion, structureOpenQuestion, rate) {
 	var question = this;
-  	
+
   	var init = function () 
 	{
 		getOpenQuestion();
 	};
+
 	init();
 
-	question.getNumber = function(num)
-	 {
-    return new Array(num);   
-	};
-
-	question.update= function()
-	{
-		console.log("klik")
+	question.update= function(points, idAnswer)
+	{	
+		rate.send(points,idAnswer);
 	};
 
 	function getOpenQuestion()

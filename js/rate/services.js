@@ -28,8 +28,6 @@ angular.module('Tabs')
           return JSON.stringify(data);
 
     };
-
-
 });
 
 angular.module('Tabs')
@@ -65,3 +63,38 @@ angular.module('Tabs')
       
       };
     });
+
+  angular.module('Tabs')
+  .factory('rate', function ($http) {
+  return {
+        send: function(points, idAnswer) 
+        {
+              return $http({
+            method: 'PUT',
+            url: 'php/API/studentsRateAnswersInsert.php',
+            data: getDataToInsertRate(points,idAnswer),
+            headers : {'Content-Type': 'application/x-www-form-urlencoded'}  
+
+          })
+          .success(function(data)
+           {
+          
+           })
+         .error(function(data, status, headers, config)
+          {
+              alert('Z powodu błędu nie można było wysłać danych');
+          });
+
+        }
+
+      };
+
+      function getDataToInsertRate(points,idAnswer)
+      {
+            data={};
+            data.idAnswer=idAnswer;
+            data.numberOfPoints=points;
+            return JSON.stringify(data);
+      };
+
+});
