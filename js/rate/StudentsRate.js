@@ -1,5 +1,5 @@
 angular.module('Tabs')
-.controller('studentsRate',[ 'openQuestion','structureOpenQuestion', 'rate', function(openQuestion, structureOpenQuestion, rate) {
+.controller('studentsRate',[ 'openQuestion','structureOpenQuestion', 'rate','notRateStudents' ,function(openQuestion, structureOpenQuestion, rate, notRateStudents) {
 	var question = this;
 
   	var init = function () 
@@ -18,8 +18,16 @@ angular.module('Tabs')
 	{
 	  openQuestion.get().then(function(data)
 	    {
-	      	question.structure=structureOpenQuestion.set(data);
+	      	var dataQuestion=data;
+
+	      		notRateStudents.getNumber().then(function(data)
+					{	
+						
+					var numberOfNotRateStudentsPerQuestion=notRateStudents.setStructure(data);
+					question.structureQuestion = structureOpenQuestion.set(dataQuestion, numberOfNotRateStudentsPerQuestion);
+					});
 	    });
 	};
+
 
 }]);
