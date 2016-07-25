@@ -1,20 +1,20 @@
 <div ng-repeat="(question, answerArray) in rate.structureQuestion">
-	<div class=" btn btn-primary btn-block" ng-click="show =!show">{{question}}			
+	<div class=" btn btn-primary btn-block" ng-click="show =! show">{{question}}			
 
-		<div style="; float: right;" class=" btn-danger" ng-show="answerArray.notRateStudents" > 	
-			<div style=" display: inline;">Do oceny pozostało {{answerArray.notRateStudents}}</div>
+		<div class=" btn-danger notRate" ng-init="numberNotRate=answerArray.notRateStudents" ng-show="answerArray.notRateStudents" > 	
+			<div >Do oceny pozostało {{numberNotRate}}</div>
 		</div>	
 		<div ng-repeat="q in answerArray">
-				<div  style="text-align: left; display: block;" class="btn btn-default btn-block">						
-					<div style="font-weight: bold;">{{q.name}} {{q.surname}}</div> 						
-						<div display:="" inline;="">
-					<div style=" display: inline;font-weight: bold;">Odpowiedź: 
+				<div class="btn btn-default btn-block answerBox" ng-show="show" ng-click="$event.stopPropagation();" >			
+					<div class="bold">{{q.name}} {{q.surname}}</div> 						
+						<div >
+					<div class="bold inLine">Odpowiedź: 
 					</div>{{q.answer}}</div>		
 								
 					<div class="btn-default"></div>					
-						<div style="display: inline; border-style: outset;" ng-init="rateValue=q.points">
+						<div class="inLine" style="border-style: outset;" ng-init="rateValue=q.points">
 						Student otrzymał {{rateValue}} punkty. Zmień ocenę na </div>			
-						 <ng-rate-it style="display: inline;" ng-click="rate.update(rateValue, q.idAnswer)" min=0 resetable=true max ="q.pointsToGet" step = 1 ng-model="rateValue"></ng-rate-it>
+						 <ng-rate-it class="inLine" ng-click="rate.update(rateValue, q.idAnswer);" min=0 resetable=true max ="q.pointsToGet" step = 1 ng-model="rateValue"></ng-rate-it>
 				</div> 
 		</div>
 	</div>

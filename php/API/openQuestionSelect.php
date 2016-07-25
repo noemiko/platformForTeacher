@@ -34,7 +34,6 @@ $sql = "SELECT
 		and g.idGrupy='$id'
 		and pr.nazwa='$subject'
 		and wp.rodzaj='$typeOfSubject'
-
 	";
 $result = mysqli_query($db, $sql);
 

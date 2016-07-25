@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('Tabs')
   .factory('openQuestion', function ($http, $routeParams) {
   return {
@@ -21,7 +23,7 @@ angular.module('Tabs')
       var data={};
           data.id = $routeParams.id;
 
-          var subject=$routeParams.subject.split("(");
+      var subject=$routeParams.subject.split("(");
           data.typeOfSubject=subject[1].substr(0,2);
           data.subject=subject[0];
 
@@ -37,7 +39,7 @@ angular.module('Tabs')
         var questions=dataQuestion['data'];
         var questionTable={};
 
-        for (i = 0; i < questions.length; i++) 
+        for (let i = 0; i < questions.length; i++) 
         { 
           var questionContent = questions[i][4];
           var idQuestion=questions[i][7];
@@ -70,7 +72,7 @@ angular.module('Tabs')
 
       function numberOfNotRateForIdQuestion(idQuestion,numberOfNotRateStudentsPerQuestion)
       {
-          for (idQuestionNotRate in numberOfNotRateStudentsPerQuestion) 
+          for (let idQuestionNotRate in numberOfNotRateStudentsPerQuestion) 
                       { 
                         if (idQuestionNotRate==idQuestion)
                         {
@@ -105,7 +107,7 @@ angular.module('Tabs')
 
       function getDataToInsertRate(points,idAnswer)
       {
-            data={};
+            var data={};
             data.idAnswer=idAnswer;
             data.numberOfPoints=points;
             return JSON.stringify(data);
@@ -136,7 +138,7 @@ angular.module('Tabs')
           var notRate=data['data'];
 
           var dataTable= {};
-            for (i = 0; i < notRate.length; i++) 
+            for (let i = 0; i < notRate.length; i++) 
               { 
                 var idQuestion =notRate[i][0];
                 var numberOfNotRate =notRate[i][1];
@@ -144,8 +146,6 @@ angular.module('Tabs')
               };
           return dataTable;
         };
-
-
 
     function getDataForSelectSQL()
     {
@@ -161,3 +161,6 @@ angular.module('Tabs')
     };
 
 });
+
+
+

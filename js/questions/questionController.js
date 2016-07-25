@@ -1,4 +1,6 @@
-angular.module('Tabs')
+(function() {
+  'use strict';
+	angular.module('Tabs')
   .controller("questionController", ['questionSend',  function(questionSend) {
     this.data = {};
 
@@ -8,3 +10,5 @@ angular.module('Tabs')
     };
 
   }]);
+
+}());

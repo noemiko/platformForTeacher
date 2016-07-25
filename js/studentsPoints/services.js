@@ -1,3 +1,4 @@
+'use strict';
 angular.module('Tabs')
   .factory('pointsList', function ($http, $routeParams) {
   return {
@@ -29,19 +30,19 @@ angular.module('Tabs')
           data.subject=subject[0];
 
           return JSON.stringify(data);
-
     };
 
 
 });
 
 angular.module('Tabs')
-  .service('structureStudents', function ($http) {
+  .service('structureStudents', function ($http)
+   {
      this.set=function(data)
       {
         var students=data['data'];
         var studentsTable=[];
-        for (i = 0; i < students.length; i++) 
+        for (let i = 0; i < students.length; i++) 
         { 
           var row={};
           row.id=i+1;

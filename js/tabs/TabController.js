@@ -1,3 +1,4 @@
+'use strict';
   angular.module('Tabs')
   .controller("tabController",['$routeParams', function($routeParams) {
     this.tab = 1;

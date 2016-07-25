@@ -1,6 +1,10 @@
-angular.module('Menu')
+(function() {
+  'use strict';
+
+  angular.module('Menu')
 .controller('menuController', ['$http','groupList', 'structureMenu' ,
 function ($http, groupList, structureMenu) {
+	
 	var menu=this;
 	var init = function () 
 	{
@@ -19,3 +23,6 @@ function ($http, groupList, structureMenu) {
 	 };
 
 }]);
+
+
+}());

@@ -1,3 +1,4 @@
+'use strict';
 angular.module('Tabs')
 .controller('studentsPointsController',[ 'pointsList', 'structureStudents', function(pointsList, structureStudents) {
   var students=this;

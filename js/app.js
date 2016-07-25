@@ -1,3 +1,4 @@
+'use strict';
 angular.module('myApp', ['Menu','ngRoute','Tabs','thatisuday.dropzone','ngRateIt'])
 	.config(function ($routeProvider) {
     $routeProvider

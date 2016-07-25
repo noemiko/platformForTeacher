@@ -1,8 +1,10 @@
+'use strict';
+
 angular.module('Tabs')
 .controller('studentsRate',[ 'openQuestion','structureOpenQuestion', 'rate','notRateStudents' ,function(openQuestion, structureOpenQuestion, rate, notRateStudents) {
 	var question = this;
 
-  	var init = function () 
+  	function init() 
 	{
 		getOpenQuestion();
 	};
@@ -12,7 +14,9 @@ angular.module('Tabs')
 	question.update= function(points, idAnswer)
 	{	
 		rate.send(points,idAnswer);
+		
 	};
+	
 
 	function getOpenQuestion()
 	{
@@ -25,9 +29,14 @@ angular.module('Tabs')
 						
 					var numberOfNotRateStudentsPerQuestion=notRateStudents.setStructure(data);
 					question.structureQuestion = structureOpenQuestion.set(dataQuestion, numberOfNotRateStudentsPerQuestion);
+					console.log(question.structureQuestion);
 					});
 	    });
 	};
 
 
 }]);
+
+
+
+

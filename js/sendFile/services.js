@@ -1,3 +1,4 @@
+'use strict';
 angular.module('Tabs')
   .factory('file', function ($http, $routeParams) {
   return {

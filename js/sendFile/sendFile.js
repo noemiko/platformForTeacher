@@ -1,3 +1,4 @@
+'use strict';
 angular.module('Tabs').controller('dropController', ['file', function(file){
     var drop=this;
     drop.dzOptions = {
