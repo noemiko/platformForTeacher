@@ -1,5 +1,5 @@
 <div ng-repeat="(question, answerArray) in rate.structureQuestion">
-	<div class=" btn btn-primary btn-block" ng-click="show =! show">{{question}}			
+	<div class="questionToRate btn btn-primary btn-block" ng-click="show =! show">{{question}}			
 
 		<div class=" btn-danger notRate" ng-init="numberNotRate=answerArray.notRateStudents" ng-show="answerArray.notRateStudents" > 	
 			<div >Do oceny pozostało {{numberNotRate}}</div>
