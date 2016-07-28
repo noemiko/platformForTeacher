@@ -1,12 +1,24 @@
 
 #top_navigation_content { 
 	position: relative; top:80px; }
+.questionToRate
+{
+position:relative;
+}
+.jumbotron
+  {
+    position: relative; top:30px;
+  }
 
-	.jumbotron{position: relative; top:30px;}
+
 .notRate
 {
- float: right;
+ right:0%;
+top:20%;
+position:absolute;
 }
+
+
 .answerBox{
   text-align: left; 
   display: block;
@@ -19,6 +31,7 @@
 }
 .btn {
 	white-space: normal !important;
+
 }
 .bold{
 	font-weight: bold;
